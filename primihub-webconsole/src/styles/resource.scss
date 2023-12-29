@@ -1,0 +1,36 @@
+@import "~@/styles/variables.scss";
+
+::v-deep .resource-disabled{
+  color: gray;
+  filter:progid:DXImageTransform.Microsoft.BasicImage(graysale=1);
+    -webkit-filter: grayscale(100%);
+}
+::v-deep .el-form-item__label{
+  width: auto!important;
+}
+::v-deep .el-form--inline .el-form-item{
+  margin: 10px 35px 10px 0;
+}
+.upload-button{
+  margin:0 0 20px 0px;
+}
+.resource {
+  padding: 0 30px;
+  background-color: #fff;
+}
+.tag{
+  margin: 0 2px;
+}
+.search-area{
+  margin-bottom: 30px;
+}
+.search-button{
+  margin-left: 20px;
+}
+.search-area, .resource{
+  padding: 30px 20px 20px 20px;
+  background-color: #fff;
+}
+.containsy-tag{
+  margin-top: 3px;
+}

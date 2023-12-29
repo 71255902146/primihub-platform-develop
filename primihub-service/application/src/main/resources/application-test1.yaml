@@ -1,0 +1,54 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: platform
+  rabbitmq:
+    host: rabbitmq.primihub.svc.cluster.local
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+  cloud:
+    stream:
+      bindings:
+        singleTaskOutput:
+          destination: singlTaskChannel
+        singleTaskInput:
+          destination: singlTaskChannel
+          group: single
+    nacos:
+      discovery:
+        server-addr: nacos.primihub.svc.cluster.local:8848
+        namespace: f1015a60-0dbd-4151-85a6-0b6ca7cc28f0
+nacos:
+  config:
+    server-addr: nacos.primihub.svc.cluster.local:8848
+    namespace: f1015a60-0dbd-4151-85a6-0b6ca7cc28f0
+    max-retry: 3
+    config-long-poll-timeout: 1000
+    config-retry-time: 1000
+    auto-refresh: true
+    username: nacos
+    password: nacos
+    context-path: /nacos
+    group: DEFAULT_GROUP
+    file-extension: yaml
+aj:
+  captcha:
+#    jigsaw: classpath:images/yyjigsaw
+    cache-type: redis
+    water-mark: PrimiHub
+    slip-offset: 5
+    aes-status: true
+    interference-options: 0
+    req-frequency-limit-enable: true
+    req-get-lock-limit: 60
+    req-get-lock-seconds: 30
+    req-get-minute-limit: 60
+    req-check-minute-limit: 60
+    req-verify-minute-limit: 60
+    type: BLOCKPUZZLE
+logging:
+  level:
+    root: info
